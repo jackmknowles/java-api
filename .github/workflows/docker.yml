@@ -55,7 +55,6 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} 
           ECR_REPOSITORY: employee_demo
           IMAGE_TAG: team5-api
-
         run: |  
          docker build --build-arg ${DB_HOST} --build-arg ${DB_NAME} --build-arg ${DB_USERNAME} --build-arg ${DB_PASSWORD} -t ${ECR_REGISTRY}/${ECR_REPOSITORY}:${team5-api}
          docker push ${ECR_REGISTRY}/${ECR_REPOSITORY}:${team5-api}
